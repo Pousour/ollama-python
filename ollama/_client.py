@@ -333,7 +333,7 @@ class Client(BaseClient):
     return self._request(
       ChatResponse,
       'POST',
-      '/api/chat',
+      '/api/chat/completions',
       json=ChatRequest(
         model=model,
         messages=[message for message in _copy_messages(messages)],
@@ -837,7 +837,7 @@ class AsyncClient(BaseClient):
     return await self._request(
       ChatResponse,
       'POST',
-      '/api/chat',
+      '/api/chat/completions',
       json=ChatRequest(
         model=model,
         messages=[message for message in _copy_messages(messages)],
